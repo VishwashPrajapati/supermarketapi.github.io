@@ -1,7 +1,7 @@
 const Category = require("../models/categoryModel");
 var mongoose = require("mongoose");
 const Items = require("../models/ItemsModel");
-const API = require("../models/apiModel");
+const api = require("../models/apiModel");
 const Supermarket = require("../models/SupermarketModel");
 
 exports.CreateItems = async (req, res, next) => {
@@ -126,10 +126,9 @@ exports.updateItemData = async (req, res, next) => {
 };
 
 exports.getApiKey = async (req, res, next) => {
-  const apilist = await API.find();
+  const apilist = await api.find();
 
   return res.json({
     data: apilist,
-    message: "list",
   });
 };
