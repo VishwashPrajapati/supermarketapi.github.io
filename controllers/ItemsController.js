@@ -128,7 +128,6 @@ exports.updateItemData = async (req, res, next) => {
 exports.getApiKey = async (req, res, next) => {
   const apilist = await API.find();
 
-  console.log(apilist);
   return res.json({
     data: apilist,
     message: "list",
